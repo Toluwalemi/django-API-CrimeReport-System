@@ -13,7 +13,7 @@ class Reporter(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.reporter_id
+        return str(self.reporter_id)
 
 
 class Crime(models.Model):
