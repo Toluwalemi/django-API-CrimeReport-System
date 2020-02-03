@@ -18,7 +18,7 @@ class CrimeSerializer(serializers.ModelSerializer):
 class StationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Station
-        fields = ('id', 'name', 'location', 'created_at')
+        fields = ('name', 'location', 'created_at')
 
 
 class SecuritySerializer(serializers.ModelSerializer):

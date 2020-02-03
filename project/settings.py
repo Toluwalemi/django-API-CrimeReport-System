@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ReportSystem.apps.ReportsystemConfig',
+    'api.apps.ApiConfig',
 
     # Framework
     'rest_framework',
