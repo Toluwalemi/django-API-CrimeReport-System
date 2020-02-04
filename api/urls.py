@@ -1,14 +1,14 @@
 from django.urls import path
 
 from .views import ReporterListView, ReporterDetailView, CrimeListView, StationListView, StationDetailView, \
-    SecurityListView, SecurityDetailView, ReportListView, ReportDetailView
+    SecurityListView, SecurityDetailView, ReportListView, ReportDetailView, CrimeDetailView
 
 urlpatterns = [
     path('v1', ReporterListView.as_view()),
     path('v1/<int:pk>/', ReporterDetailView.as_view()),
 
     path('v2', CrimeListView.as_view()),
-    path('v2/<int:pk>/', CrimeListView.as_view()),
+    path('v2/<int:pk>/', CrimeDetailView.as_view()),
 
     path('v3', StationListView.as_view()),
     path('v3/<int:pk>/', StationDetailView.as_view()),
