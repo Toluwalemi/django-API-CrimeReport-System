@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
 from ReportSystem.models import Reporter, Crime, Station, Security, Report
@@ -7,6 +8,12 @@ class ReporterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reporter
         fields = ('id', 'reporter', 'address', 'phone_number', 'created_at')
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = get_user_model()
+        fields = ('id', 'username')
 
 
 class CrimeSerializer(serializers.ModelSerializer):

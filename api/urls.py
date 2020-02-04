@@ -1,9 +1,13 @@
 from django.urls import path
 
 from .views import ReporterListView, ReporterDetailView, CrimeListView, StationListView, StationDetailView, \
-    SecurityListView, SecurityDetailView, ReportListView, ReportDetailView, CrimeDetailView
+    SecurityListView, SecurityDetailView, ReportListView, ReportDetailView, CrimeDetailView, UserListView, \
+    UserDetailView
 
 urlpatterns = [
+    path('users/', UserListView.as_view()),
+    path('users/<int:pk>/', UserDetailView.as_view()),
+
     path('v1', ReporterListView.as_view()),
     path('v1/<int:pk>/', ReporterDetailView.as_view()),
 

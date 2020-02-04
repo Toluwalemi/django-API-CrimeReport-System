@@ -1,10 +1,11 @@
 # Create your views here.
-
+from django.contrib.auth import get_user_model
 from rest_framework import generics
 
 from ReportSystem.models import Reporter, Crime, Station, Security, Report
 from .permissions import IsReporterOrReadOnly
-from .serializers import ReporterSerializer, CrimeSerializer, StationSerializer, SecuritySerializer, ReportSerializer
+from .serializers import ReporterSerializer, CrimeSerializer, StationSerializer, SecuritySerializer, ReportSerializer, \
+    UserSerializer
 
 
 class ReporterListView(generics.ListCreateAPIView):
@@ -16,6 +17,16 @@ class ReporterDetailView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsReporterOrReadOnly,)
     queryset = Reporter.objects.all()
     serializer_class = ReporterSerializer
+
+
+class UserListView(generics.ListCreateAPIView):
+    queryset = get_user_model().objects.all()
+    serializer_class = UserSerializer
+
+
+class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = get_user_model().objects.all()
+    serializer_class = UserSerializer
 
 
 class CrimeListView(generics.ListCreateAPIView):
