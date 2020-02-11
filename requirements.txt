@@ -1,0 +1,9 @@
+dj-database-url==0.4.2
+Django==3.0.2
+djangorestframework==3.9.2
+docutils==0.14
+httpie==1.0.2
+psycopg2-binary==2.7.7
+sendgrid==4.2.0
+virtualenv==16.7.9
+whitenoise==5.0.1
